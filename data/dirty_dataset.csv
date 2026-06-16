@@ -1,0 +1,164 @@
+Transaction_ID,Date,Sales_Rep,Category,Product,Quantity,Unit_Price_INR,Total_Revenue_INR
+10000,"January 13, 2025",Deepa,Office Supplies,Metal Organizer,8.0,1200.0,9600.0
+10001,01-05-2025,Ravi,electronics,None,4.0,3500.0,14000.0
+10002,08/04/2025,Arun  ,  Furniture  ,None,5000.0,32000.0,160000000.0
+10003,25/05/2025,  Ravi,Furniture,Standing Desk,5.0,24000.0,120000.0
+10004,11-05-2025,Deepa,electronics,Smart Phone X,,45000.0,
+10005,28/04/2025,  Ravi,electronics,Laptop Pro,10.0,85000.0,850000.0
+10006,2025-01-18,kiran,Furniture,None,7.0,32000.0,224000.0
+10007,"January 29, 2025",Arun  ,electronics,Smart Phone X,7.0,999999.0,6999993.0
+10008,03-03-2025,Deepa,electronics,Laptop Pro,6.0,,
+10009,2025-05-13,PRIYA,electronics,Laptop Pro,4.0,,
+10010,"April 28, 2025",Arun  ,OFFICE SUPPLIES,Whiteboard 4x3,3.0,4500.0,13500.0
+10011,2025-04-23,kiran,Electronics,Wireless Buds,8.0,3500.0,28000.0
+10012,2025/02/06,PRIYA,,Wireless Buds,10.0,3500.0,35000.0
+10013,2025/05/01,,Furniture,Standing Desk,3.0,24000.0,72000.0
+10014,2025-02-05,kiran,  Furniture  ,Bookshelf Wood,8.0,8500.0,68000.0
+10015,04/05/2025,Ravi,Furniture,Bookshelf Wood,10.0,8500.0,85000.0
+10016,,kiran,  Furniture  ,Standing Desk,2.0,24000.0,48000.0
+10017,03-03-2025,  Ravi,  Furniture  ,Office Sofa,1.0,32000.0,32000.0
+10018,10/01/2025,Arun  ,Electronics,Smart Phone X,6.0,45000.0,270000.0
+10019,2025-03-09,Deepa,Furniture,None,10.0,6500.0,65000.0
+10020,08/04/2025,Arun  ,Electronics,Smart Phone X,1.0,45000.0,45000.0
+10021,2025/03/14,Arun  ,  Furniture  ,Bookshelf Wood,10.0,8500.0,85000.0
+10022,2025/03/15,Ravi,  Furniture  ,Standing Desk,8.0,24000.0,192000.0
+10023,2025-05-19,Ravi,OFFICE SUPPLIES,Gel Pen Pack,,350.0,
+10024,2025-02-14,  Ravi,OFFICE SUPPLIES,Gel Pen Pack,7.0,350.0,2450.0
+10025,2025-05-25,,OFFICE SUPPLIES,Whiteboard 4x3,9.0,4500.0,40500.0
+10026,2025-05-04,kiran,,Gel Pen Pack,,350.0,
+10027,04/03/2025,kiran,  Furniture  ,Bookshelf Wood,7.0,8500.0,59500.0
+10028,2025-02-07,Arun  ,Furniture,Filing Cabinet,3.0,6500.0,19500.0
+10029,2025-04-12,kiran,Electronics,Laptop Pro,7.0,,
+10030,2025-02-14,kiran,Office Supplies,Metal Organizer,1.0,1200.0,1200.0
+10031,2025/05/07,kiran,Furniture,Bookshelf Wood,1.0,8500.0,8500.0
+10032,2025-01-11,Ravi,  Furniture  ,None,8.0,32000.0,256000.0
+10033,"May 13, 2025",kiran,Office Supplies,Whiteboard 4x3,3.0,999999.0,2999997.0
+10034,14-03-2025,PRIYA,  Furniture  ,Office Sofa,5000.0,32000.0,160000000.0
+10035,2025-02-13,Arun  ,Office Supplies,Whiteboard 4x3,,4500.0,
+10036,2025-04-13,Deepa,Electronics,Wireless Buds,10.0,3500.0,35000.0
+10037,2025-05-01,Ravi,Furniture,Office Sofa,9.0,32000.0,288000.0
+10038,20/01/2025,kiran,  Furniture  ,Filing Cabinet,8.0,6500.0,52000.0
+10039,"March 31, 2025",,,Standing Desk,3.0,24000.0,72000.0
+10040,2025/01/22,kiran,Office Supplies,Whiteboard 4x3,8.0,4500.0,36000.0
+10041,28/04/2025,Ravi,electronics,Smart Phone X,9.0,45000.0,405000.0
+10042,02/01/2025,  Ravi,Office Supplies,Ergonomic Chair,9.0,18000.0,162000.0
+10043,17/01/2025,Deepa,electronics,Laptop Pro,5000.0,85000.0,425000000.0
+10044,"February 05, 2025",Ravi,Electronics,Laptop Pro,2.0,85000.0,170000.0
+10045,2025-03-11,Deepa,Electronics,LED Monitor 27,7.0,15000.0,105000.0
+10046,2025-03-06,kiran,Office Supplies,Gel Pen Pack,7.0,350.0,2450.0
+10047,12-03-2025,Ravi,electronics,Wireless Buds,6.0,3500.0,21000.0
+10048,27-03-2025,PRIYA,,Gel Pen Pack,3.0,350.0,1050.0
+10049,"February 05, 2025",kiran,electronics,Laptop Pro,5.0,85000.0,425000.0
+10050,2025-05-08,,OFFICE SUPPLIES,Ergonomic Chair,3.0,18000.0,54000.0
+10051,20-02-2025,PRIYA,  Furniture  ,Filing Cabinet,3.0,6500.0,19500.0
+10052,2025/04/04,PRIYA,electronics,Laptop Pro,4.0,85000.0,340000.0
+10053,"February 03, 2025",Deepa,electronics,Smart Phone X,6.0,45000.0,270000.0
+10054,2025-05-13,  Ravi,electronics,Wireless Buds,5.0,3500.0,17500.0
+10055,2025/05/20,Arun  ,Furniture,Filing Cabinet,6.0,6500.0,39000.0
+10056,"May 04, 2025",  Ravi,electronics,LED Monitor 27,6.0,999999.0,5999994.0
+10057,,kiran,,Smart Phone X,6.0,45000.0,270000.0
+10058,"February 04, 2025",,Electronics,Wireless Buds,1.0,,
+10059,2025-02-13,kiran,OFFICE SUPPLIES,Ergonomic Chair,4.0,18000.0,72000.0
+10060,"May 08, 2025",kiran,Electronics,LED Monitor 27,4.0,15000.0,60000.0
+10061,13-05-2025,Arun  ,Furniture,Office Sofa,8.0,32000.0,256000.0
+10062,14/04/2025,,  Furniture  ,Filing Cabinet,6.0,6500.0,39000.0
+10063,18-01-2025,PRIYA,OFFICE SUPPLIES,Whiteboard 4x3,9.0,4500.0,40500.0
+10064,2025-04-03,Ravi,OFFICE SUPPLIES,Metal Organizer,6.0,1200.0,7200.0
+10065,14-03-2025,  Ravi,Electronics,LED Monitor 27,1.0,15000.0,15000.0
+10066,27/05/2025,PRIYA,  Furniture  ,Standing Desk,2.0,24000.0,48000.0
+10067,2025-01-08,Deepa,  Furniture  ,Standing Desk,1.0,24000.0,24000.0
+10068,"April 17, 2025",  Ravi,Electronics,Wireless Buds,4.0,3500.0,14000.0
+10069,2025/02/16,Deepa,  Furniture  ,Standing Desk,9.0,24000.0,216000.0
+10070,,Ravi,OFFICE SUPPLIES,Whiteboard 4x3,2.0,4500.0,9000.0
+10071,2025-04-10,Ravi,  Furniture  ,Office Sofa,4.0,32000.0,128000.0
+10072,22/04/2025,,Electronics,LED Monitor 27,2.0,15000.0,30000.0
+10073,2025-05-31,Ravi,Furniture,Office Sofa,9.0,32000.0,288000.0
+10074,31-01-2025,  Ravi,Furniture,Filing Cabinet,3.0,6500.0,19500.0
+10075,04-04-2025,Deepa,Electronics,Laptop Pro,1.0,85000.0,85000.0
+10076,27/03/2025,kiran,Electronics,Laptop Pro,5.0,85000.0,425000.0
+10077,24-05-2025,Ravi,Electronics,Smart Phone X,5.0,45000.0,225000.0
+10078,2025-05-11,Deepa,  Furniture  ,Filing Cabinet,9.0,6500.0,58500.0
+10079,30-03-2025,Deepa,  Furniture  ,Filing Cabinet,9.0,6500.0,58500.0
+10080,2025/01/10,kiran,  Furniture  ,Filing Cabinet,8.0,6500.0,52000.0
+10081,2025-04-14,Ravi,OFFICE SUPPLIES,Metal Organizer,,1200.0,
+10082,11-01-2025,  Ravi,OFFICE SUPPLIES,Ergonomic Chair,6.0,18000.0,108000.0
+10083,,Arun  ,  Furniture  ,Bookshelf Wood,3.0,8500.0,25500.0
+10084,2025/05/17,Arun  ,  Furniture  ,Standing Desk,4.0,24000.0,96000.0
+10085,14-03-2025,kiran,OFFICE SUPPLIES,Gel Pen Pack,9.0,350.0,3150.0
+10086,2025/03/09,Deepa,Furniture,None,4.0,8500.0,34000.0
+10087,2025-04-10,kiran,Furniture,Standing Desk,2.0,24000.0,48000.0
+10088,03/02/2025,PRIYA,Electronics,Wireless Buds,8.0,,
+10089,2025-05-17,  Ravi,electronics,Laptop Pro,9.0,85000.0,765000.0
+10090,2025/04/30,Ravi,Office Supplies,Ergonomic Chair,7.0,18000.0,126000.0
+10091,14/03/2025,Arun  ,electronics,Wireless Buds,4.0,3500.0,14000.0
+10092,2025-03-29,  Ravi,electronics,Laptop Pro,8.0,999999.0,7999992.0
+10093,2025-03-03,Ravi,electronics,Wireless Buds,7.0,3500.0,24500.0
+10094,06-01-2025,Arun  ,Furniture,Bookshelf Wood,5.0,8500.0,42500.0
+10095,2025-01-27,Arun  ,  Furniture  ,Standing Desk,7.0,24000.0,168000.0
+10096,2025-01-25,Deepa,OFFICE SUPPLIES,Metal Organizer,,1200.0,
+10097,"March 28, 2025",Ravi,OFFICE SUPPLIES,Gel Pen Pack,1.0,350.0,350.0
+10098,28-03-2025,PRIYA,Office Supplies,Metal Organizer,7.0,1200.0,8400.0
+10099,2025-05-25,Arun  ,OFFICE SUPPLIES,Ergonomic Chair,6.0,18000.0,108000.0
+10100,2025/02/23,  Ravi,Electronics,Smart Phone X,7.0,45000.0,315000.0
+10101,2025/04/21,PRIYA,electronics,Laptop Pro,5.0,,
+10102,,Arun  ,electronics,LED Monitor 27,3.0,15000.0,45000.0
+10103,2025/04/19,,Office Supplies,Gel Pen Pack,3.0,350.0,1050.0
+10104,,Deepa,Electronics,None,3.0,3500.0,10500.0
+10105,23/02/2025,kiran,,Filing Cabinet,6.0,6500.0,39000.0
+10106,2025-04-07,PRIYA,electronics,Smart Phone X,3.0,45000.0,135000.0
+10107,2025-04-20,Deepa,electronics,Wireless Buds,1.0,3500.0,3500.0
+10108,,Deepa,  Furniture  ,Bookshelf Wood,2.0,8500.0,17000.0
+10109,2025/03/01,PRIYA,Office Supplies,Ergonomic Chair,3.0,18000.0,54000.0
+10110,2025/04/02,,OFFICE SUPPLIES,Gel Pen Pack,7.0,350.0,2450.0
+10111,2025/05/23,Ravi,Electronics,Laptop Pro,8.0,85000.0,680000.0
+10112,2025/05/20,Deepa,electronics,LED Monitor 27,1.0,15000.0,15000.0
+10113,2025/02/10,Arun  ,Furniture,Filing Cabinet,1.0,6500.0,6500.0
+10114,2025-02-06,Deepa,Office Supplies,Metal Organizer,9.0,1200.0,10800.0
+10115,"January 27, 2025",  Ravi,  Furniture  ,Office Sofa,1.0,32000.0,32000.0
+10116,"January 18, 2025",Ravi,  Furniture  ,Office Sofa,3.0,32000.0,96000.0
+10117,2025-05-01,kiran,  Furniture  ,Standing Desk,10.0,24000.0,240000.0
+10118,25-02-2025,  Ravi,electronics,Laptop Pro,8.0,85000.0,680000.0
+10119,03/01/2025,Arun  ,Office Supplies,Metal Organizer,5.0,1200.0,6000.0
+10120,26/05/2025,PRIYA,Electronics,LED Monitor 27,7.0,15000.0,105000.0
+10121,2025-04-03,Deepa,Furniture,Filing Cabinet,1.0,,
+10122,2025-01-14,Arun  ,,Filing Cabinet,6.0,6500.0,39000.0
+10123,05/02/2025,Arun  ,Electronics,Wireless Buds,8.0,999999.0,7999992.0
+10124,26-04-2025,Ravi,Office Supplies,None,9.0,350.0,3150.0
+10125,"February 14, 2025",Deepa,,Whiteboard 4x3,10.0,4500.0,45000.0
+10126,01-05-2025,PRIYA,Office Supplies,Metal Organizer,5.0,1200.0,6000.0
+10127,2025-03-27,,Office Supplies,Whiteboard 4x3,6.0,,
+10128,2025/03/18,,,Filing Cabinet,9.0,6500.0,58500.0
+10129,01/03/2025,Ravi,  Furniture  ,Bookshelf Wood,1.0,8500.0,8500.0
+10130,"March 27, 2025",kiran,Furniture,Standing Desk,6.0,24000.0,144000.0
+10131,,  Ravi,Furniture,Filing Cabinet,9.0,6500.0,58500.0
+10132,17/04/2025,  Ravi,,None,7.0,1200.0,8400.0
+10133,2025-05-16,PRIYA,Electronics,Wireless Buds,4.0,3500.0,14000.0
+10134,2025-04-07,PRIYA,  Furniture  ,Filing Cabinet,3.0,6500.0,19500.0
+10135,07/02/2025,Deepa,Furniture,Office Sofa,9.0,32000.0,288000.0
+10136,,kiran,Furniture,Filing Cabinet,5000.0,6500.0,32500000.0
+10137,"January 04, 2025",Arun  ,electronics,Laptop Pro,6.0,85000.0,510000.0
+10138,23/05/2025,PRIYA,OFFICE SUPPLIES,Metal Organizer,4.0,1200.0,4800.0
+10139,17/05/2025,PRIYA,  Furniture  ,Bookshelf Wood,4.0,8500.0,34000.0
+10140,2025-05-17,  Ravi,Electronics,LED Monitor 27,,15000.0,
+10141,2025/05/30,  Ravi,  Furniture  ,Standing Desk,,999999.0,
+10142,2025-04-08,Deepa,OFFICE SUPPLIES,Ergonomic Chair,5.0,18000.0,90000.0
+10143,2025-05-03,kiran,Electronics,Laptop Pro,6.0,85000.0,510000.0
+10144,26/01/2025,kiran,OFFICE SUPPLIES,Gel Pen Pack,1.0,999999.0,999999.0
+10145,13/03/2025,  Ravi,OFFICE SUPPLIES,Metal Organizer,5000.0,1200.0,6000000.0
+10146,"April 03, 2025",Ravi,Furniture,Filing Cabinet,,6500.0,
+10147,"April 17, 2025",  Ravi,OFFICE SUPPLIES,Whiteboard 4x3,,4500.0,
+10148,2025-01-27,,,Standing Desk,9.0,24000.0,216000.0
+10149,17/03/2025,kiran,Furniture,Filing Cabinet,2.0,6500.0,13000.0
+10133,2025-05-16,PRIYA,Electronics,Wireless Buds,4.0,3500.0,14000.0
+10123,05/02/2025,Arun  ,Electronics,Wireless Buds,8.0,999999.0,7999992.0
+10012,2025/02/06,PRIYA,,Wireless Buds,10.0,3500.0,35000.0
+10055,2025/05/20,Arun  ,Furniture,Filing Cabinet,6.0,6500.0,39000.0
+10113,2025/02/10,Arun  ,Furniture,Filing Cabinet,1.0,6500.0,6500.0
+10121,2025-04-03,Deepa,Furniture,Filing Cabinet,1.0,,
+10064,2025-04-03,Ravi,OFFICE SUPPLIES,Metal Organizer,6.0,1200.0,7200.0
+10061,13-05-2025,Arun  ,Furniture,Office Sofa,8.0,32000.0,256000.0
+10028,2025-02-07,Arun  ,Furniture,Filing Cabinet,3.0,6500.0,19500.0
+10000,"January 13, 2025",Deepa,Office Supplies,Metal Organizer,8.0,1200.0,9600.0
+10067,2025-01-08,Deepa,  Furniture  ,Standing Desk,1.0,24000.0,24000.0
+10127,2025-03-27,,Office Supplies,Whiteboard 4x3,6.0,,
+10005,28/04/2025,ravi  ,ELECTRONICS,Laptop Pro,10.0,85000.0,850000.0

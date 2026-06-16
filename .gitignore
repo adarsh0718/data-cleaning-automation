@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+venv/
+.env
+.DS_Store
+data/cleaned_dataset.csv
+data/uploaded_dataset.csv
+data/active_dataset_path.txt
+data/data_cleaning_audit_report.xlsx

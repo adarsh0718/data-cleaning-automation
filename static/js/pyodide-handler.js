@@ -5,40 +5,65 @@ const originalFetch = window.fetch;
 let pyodideInstance = null;
 let pyodideReadyPromise = null;
 
+function updateLoadingStatus(message, isError = false) {
+    console.log(`[Pyodide Status] ${message}`);
+    const textEl = document.querySelector('.loading-text');
+    if (textEl) {
+        textEl.innerHTML = message;
+        if (isError) {
+            textEl.style.color = '#f87171'; // sleek light red for dark mode
+            textEl.style.fontWeight = 'bold';
+        }
+    }
+}
+
 // Initialize Pyodide runtime and load dependencies
 async function initPyodide() {
-    console.log("[Pyodide] Initializing WebAssembly Python environment...");
-    
-    // Load Pyodide
-    let pyodide = await loadPyodide();
-    
-    // Load Pandas, Numpy, and Micropip
-    console.log("[Pyodide] Loading Python packages (pandas, numpy)...");
-    await pyodide.loadPackage(['pandas', 'numpy', 'micropip']);
-    
-    // Install openpyxl via micropip
-    console.log("[Pyodide] Installing openpyxl for Excel generation...");
-    const micropip = pyodide.pyimport("micropip");
-    await micropip.install("openpyxl");
-    
-    // Setup Virtual File System structure
-    pyodide.FS.mkdir('data');
-    
-    // Download and write the data cleaning engine
-    console.log("[Pyodide] Fetching cleaning_engine.py...");
-    let engineRes = await originalFetch('cleaning_engine.py');
-    let engineCode = await engineRes.text();
-    pyodide.FS.writeFile('cleaning_engine.py', engineCode);
-    
-    // Download and write the default dirty dataset
-    console.log("[Pyodide] Fetching default dirty_dataset.csv...");
-    let dirtyRes = await originalFetch('data/dirty_dataset.csv');
-    let dirtyData = await dirtyRes.text();
-    pyodide.FS.writeFile('data/dirty_dataset.csv', dirtyData);
-    
-    console.log("[Pyodide] Runtime environment is fully ready.");
-    pyodideInstance = pyodide;
-    return pyodide;
+    try {
+        updateLoadingStatus("⚡ [1/5] Initializing Python WebAssembly environment...");
+        
+        // Load Pyodide with explicit indexURL
+        let pyodide = await loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/"
+        });
+        
+        updateLoadingStatus("⚡ [2/5] Loading core packages (pandas, numpy)...");
+        // Load Pandas, Numpy, and Micropip
+        await pyodide.loadPackage(['pandas', 'numpy', 'micropip']);
+        
+        updateLoadingStatus("⚡ [3/5] Installing Excel report builder (openpyxl)...");
+        // Install openpyxl via micropip
+        const micropip = pyodide.pyimport("micropip");
+        await micropip.install("openpyxl");
+        
+        updateLoadingStatus("⚡ [4/5] Mounting virtual file system...");
+        // Setup Virtual File System structure
+        try {
+            pyodide.FS.mkdir('data');
+        } catch(e) {
+            // Already exists or mounted
+        }
+        
+        updateLoadingStatus("⚡ [5/5] Fetching data engineering engines...");
+        // Download and write the data cleaning engine (relative paths to page root)
+        let engineRes = await originalFetch('cleaning_engine.py');
+        if (!engineRes.ok) throw new Error("Failed to load cleaning_engine.py from server");
+        let engineCode = await engineRes.text();
+        pyodide.FS.writeFile('cleaning_engine.py', engineCode);
+        
+        // Download and write the default dirty dataset
+        let dirtyRes = await originalFetch('data/dirty_dataset.csv');
+        if (!dirtyRes.ok) throw new Error("Failed to load dirty_dataset.csv from server");
+        let dirtyData = await dirtyRes.text();
+        pyodide.FS.writeFile('data/dirty_dataset.csv', dirtyData);
+        
+        updateLoadingStatus("⚡ Running data pipelines, auditing schemas, and correcting inconsistencies...");
+        pyodideInstance = pyodide;
+        return pyodide;
+    } catch (err) {
+        updateLoadingStatus(`❌ Pyodide Initialization Failed:<br>${err.message}`, true);
+        throw err;
+    }
 }
 
 // Start loading Pyodide immediately

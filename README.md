@@ -12,7 +12,8 @@
 **An interactive full-stack application that automates data cleaning and Excel reporting workflows.**  
 Includes a gorgeous glassmorphic dark-theme control dashboard and programmatically styled multi-tab Excel reporting.
 
-[📂 View Source](https://github.com/adarsh0718/data-cleaning-automation)
+[📂 View Source](https://github.com/adarsh0718/data-cleaning-automation)  
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/adarsh0718/data-cleaning-automation)
 
 </div>
 
@@ -108,6 +109,19 @@ python data/generate_dirty_data.py
 python app.py
 ```
 Open **[http://localhost:5002](http://localhost:5002)** in your browser!
+
+---
+
+## 🚀 Deployment (Live Demo)
+
+This application can be deployed instantly to **Render** for a free live demo:
+
+1. Click the **Deploy to Render** button at the top of this README.
+2. Connect your GitHub account and authorize Render.
+3. Click **Apply** or **Deploy** on the Blueprint configuration page.
+4. Render will automatically build the application and host it on a public URL.
+
+*Note: The free tier of Render spins down after 15 minutes of inactivity. When someone visits the live demo, it may take around 50 seconds to spin up.*
 
 ---
 

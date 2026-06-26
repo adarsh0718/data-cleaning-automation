@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning &amp; Reporting Automation Dashboard</title>
+    
+    <!-- Custom Style Sheet (Glassmorphism & Layouts) -->
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Dashboard Header -->
+        <header class="animate-fade-in" style="animation-delay: 0.1s">
+            <div class="brand-section">
+                <span class="brand-logo">🧹</span>
+                <h1 class="brand-title">Data Cleaning &amp; Reporting Automation</h1>
+            </div>
+            
+            <div class="header-controls">
+                <!-- Active Dataset Status Indicator -->
+                <div class="dataset-indicator" id="active-dataset-pill" style="display: none;">
+                    <span class="indicator-dot"></span>
+                    <span id="active-dataset-name">dirty_dataset.csv</span>
+                    <button id="btn-reset-dataset" title="Reset to default dataset">&times;</button>
+                </div>
+                
+                <!-- Drag and Drop Import Container -->
+                <div class="upload-zone" id="drop-zone">
+                    <span class="upload-icon">📥</span>
+                    <div class="upload-text">
+                        Drag &amp; drop CSV/Excel or <span>browse</span>
+                    </div>
+                    <input type="file" id="file-input" accept=".csv, .xlsx, .xls">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Split Layout -->
+        <div class="dashboard-layout">
+            <!-- Left Panel: Parameter Controls -->
+            <aside class="glass-card control-panel animate-fade-in" style="animation-delay: 0.2s">
+                <h2 class="panel-title">Cleaning Pipeline</h2>
+                
+                <form id="cleaning-controls-form" onsubmit="return false;">
+                    <!-- Numeric Imputation -->
+                    <div class="control-group">
+                        <label class="control-label" for="impute-numeric">Numeric Missing Values</label>
+                        <select class="control-select" id="impute-numeric">
+                            <option value="median">Impute with Median (Recommended)</option>
+                            <option value="mean">Impute with Mean</option>
+                            <option value="drop">Drop Rows with Nulls</option>
+                        </select>
+                    </div>
+
+                    <!-- Categorical Imputation -->
+                    <div class="control-group">
+                        <label class="control-label" for="impute-categorical">Categorical Missing Values</label>
+                        <select class="control-select" id="impute-categorical">
+                            <option value="mode">Impute with Mode (Most Frequent)</option>
+                            <option value="unknown">Impute with "Unknown" placeholder</option>
+                            <option value="drop">Drop Rows with Nulls</option>
+                        </select>
+                    </div>
+
+                    <!-- Text Casing Standardization -->
+                    <div class="control-group">
+                        <label class="control-label" for="text-case">Text Case Normalization</label>
+                        <select class="control-select" id="text-case">
+                            <option value="title">Title Case (e.g. Office Supplies)</option>
+                            <option value="upper">UPPERCASE (e.g. OFFICE SUPPLIES)</option>
+                            <option value="lower">lowercase (e.g. office supplies)</option>
+                            <option value="none">No Casing Changes</option>
+                        </select>
+                    </div>
+
+                    <!-- Outlier Threshold Slider -->
+                    <div class="control-group">
+                        <div class="slider-header">
+                            <label class="control-label" for="outlier-threshold">Outlier Threshold (IQR)</label>
+                            <span class="slider-value" id="threshold-val">1.5x</span>
+                        </div>
+                        <input type="range" class="control-slider" id="outlier-threshold" min="0" max="4.0" step="0.5" value="1.5">
+                        <span class="slider-subtext">IQR multiplier to cap anomalies. Set 0 to disable capping.</span>
+                    </div>
+
+                    <button class="submit-btn" id="btn-run-cleaning">
+                        ⚡ Run Cleaning Pipeline
+                    </button>
+                    
+                    <button class="export-btn" id="btn-download-report">
+                        📊 Export Styled Excel Audit Report
+                    </button>
+                </form>
+            </aside>
+
+            <!-- Right Panel: KPI Cards and Audit summaries -->
+            <main class="dashboard-main">
+                <!-- KPI metrics cards -->
+                <section class="kpi-container">
+                    <!-- Row counts -->
+                    <div class="glass-card kpi-card kpi-rows animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Audited / Cleaned Rows</span>
+                            <span class="kpi-icon">📁</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-value" id="kpi-val-rows">0 / 0</span>
+                        </div>
+                        <div class="kpi-footer">Database record counts</div>
+                    </div>
+
+                    <!-- Duplicates cleared -->
+                    <div class="glass-card kpi-card kpi-duplicates animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Duplicates Cleared</span>
+                            <span class="kpi-icon">✂️</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-value" id="kpi-val-duplicates">0</span>
+                        </div>
+                        <div class="kpi-footer">Exact and fuzzy matches dropped</div>
+                    </div>
+
+                    <!-- Nulls Imputed -->
+                    <div class="glass-card kpi-card kpi-nulls animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Null Cells Imputed</span>
+                            <span class="kpi-icon">🩹</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-value" id="kpi-val-nulls">0</span>
+                        </div>
+                        <div class="kpi-footer">Missing cells filled automatically</div>
+                    </div>
+
+                    <!-- Outliers capped -->
+                    <div class="glass-card kpi-card kpi-outliers animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Outliers Capped</span>
+                            <span class="kpi-icon">🗜️</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-value" id="kpi-val-outliers">0</span>
+                        </div>
+                        <div class="kpi-footer">High-variance data caps applied</div>
+                    </div>
+                </section>
+
+                <!-- Audit Log and Quality Distribution Grid -->
+                <section class="charts-grid">
+                    <!-- Left: Audit Trail Log timeline -->
+                    <div class="glass-card chart-card chart-card-span-7 animate-fade-in" style="animation-delay: 0.7s">
+                        <div class="chart-title">
+                            <span>Pipeline Audit Corrections Log</span>
+                            <div class="log-filter-toggles" id="log-toggles">
+                                <span class="log-toggle active" data-filter="all">All</span>
+                                <span class="log-toggle" data-filter="duplicate">Duplicates</span>
+                                <span class="log-toggle" data-filter="null">Nulls</span>
+                                <span class="log-toggle" data-filter="outlier">Outliers</span>
+                                <span class="log-toggle" data-filter="text">Formats</span>
+                            </div>
+                        </div>
+                        <div class="audit-log-container">
+                            <div class="audit-log-timeline" id="audit-log-list">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Data Quality donut/radial chart -->
+                    <div class="glass-card chart-card chart-card-span-5 animate-fade-in" style="animation-delay: 0.8s">
+                        <div class="chart-title">
+                            <span>Ingested Dataset Quality Index</span>
+                        </div>
+                        <div class="chart-container" id="chart-quality-donut"></div>
+                    </div>
+                </section>
+
+                <!-- Data Table Section -->
+                <section class="glass-card table-card animate-fade-in" style="animation-delay: 0.9s">
+                    <div class="table-header-wrapper">
+                        <h3>Dataset Sandbox Preview</h3>
+                        <div class="search-container table-search">
+                            <span>🔍</span>
+                            <input type="text" id="table-search-input" class="search-input" placeholder="Quick search transactions...">
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table id="records-table">
+                            <thead>
+                                <tr>
+                                    <th data-column="Transaction_ID">Transaction ID</th>
+                                    <th data-column="Date">Date</th>
+                                    <th data-column="Sales_Rep">Sales Rep</th>
+                                    <th data-column="Category">Category</th>
+                                    <th data-column="Product">Product</th>
+                                    <th data-column="Quantity" style="text-align: right;">Qty</th>
+                                    <th data-column="Unit_Price_INR" style="text-align: right;">Price (INR)</th>
+                                    <th data-column="Total_Revenue_INR" style="text-align: right;">Total Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination controls -->
+                    <div class="table-pagination">
+                        <span id="table-info">Showing 0 of 0 entries</span>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="btn-prev-page" disabled>Previous</button>
+                            <button class="pagination-btn" id="btn-next-page" disabled>Next</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Spinner loading screen -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+            <p class="loading-text">⚡ Running data pipelines, auditing schemas, and correcting inconsistencies...</p>
+        </div>
+    </div>
+
+    <!-- CDN Libraries: ApexCharts & Pyodide -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+    <!-- Pyodide Interceptor Handler -->
+    <script src="static/js/pyodide-handler.js"></script>
+
+    <!-- App Entry Points -->
+    <script type="module" src="static/js/app.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 **An interactive full-stack application that automates data cleaning and Excel reporting workflows.**  
 Includes a gorgeous glassmorphic dark-theme control dashboard and programmatically styled multi-tab Excel reporting.
 
-[📂 View Source](https://github.com/adarsh0718/data-cleaning-automation)  
+[📂 View Source](https://github.com/adarsh0718/data-cleaning-automation) &nbsp;&nbsp;•&nbsp;&nbsp; [⚡ Live Demo Link](https://adarsh0718.github.io/data-cleaning-automation/)  
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/adarsh0718/data-cleaning-automation)
 
 </div>
